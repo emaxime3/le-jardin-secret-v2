@@ -16,6 +16,7 @@ export default function Poemes() {
   const [poemes, setPoemes] = useState<Poeme[]>([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [selectedPoeme, setSelectedPoeme] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadPoemes() {
@@ -32,9 +33,11 @@ export default function Poemes() {
 
       if (error) {
         console.error("Erreur chargement des poèmes :", error);
+
         setErrorMessage(
           "Impossible de charger les poèmes pour le moment."
         );
+
         setLoading(false);
         return;
       }
@@ -60,16 +63,35 @@ export default function Poemes() {
         </p>
 
         <h1>
-          Les Poèmes
+          La Bibliothèque des poèmes
         </h1>
 
         <p className="serre-intro">
-          Quelques mots déposés dans le jardin,
+          Quelques pages où les mots
+          <br />
+          ont choisi de rester.
+        </p>
+
+      </header>
+
+
+      {/* ==========================================
+          INTRODUCTION
+      ========================================== */}
+
+      <section className="poemes-intro">
+
+        <p className="poemes-intro-label">
+          Le Jardin Secret
+        </p>
+
+        <p className="poemes-intro-text">
+          Quelques mots déposés ici,
           <br />
           pour ceux qui prennent le temps de les lire.
         </p>
 
-      </header>
+      </section>
 
 
       {/* ==========================================
@@ -157,44 +179,93 @@ export default function Poemes() {
 
 
       {/* ==========================================
-          POÈMES
+          LISTE DES POÈMES
       ========================================== */}
 
       {!loading &&
         !errorMessage &&
         poemes.length > 0 && (
-          <section className="serre-spaces">
 
-            {poemes.map((poeme) => (
-              <article
-                key={poeme.id}
-                className="serre-space"
-              >
+          <section className="poemes-list">
 
-                <div className="serre-icon">
-                  🌸
-                </div>
+            {poemes.map((poeme, index) => {
 
-                <p className="serre-space-type">
-                  Poème
-                </p>
+              const isOpen = selectedPoeme === poeme.id;
 
-                <h2>
-                  {poeme.title}
-                </h2>
-
-                <p
-                  style={{
-                    whiteSpace: "pre-wrap",
-                  }}
+              return (
+                <div
+                  key={poeme.id}
+                  className="poeme-row"
                 >
-                  {poeme.content}
-                </p>
 
-              </article>
-            ))}
+                  {/* --------------------------------
+                      BOUTON DU POÈME
+                  -------------------------------- */}
+
+                  <button
+                    type="button"
+                    className="poeme-button"
+                    onClick={() =>
+                      setSelectedPoeme(
+                        isOpen ? null : poeme.id
+                      )
+                    }
+                  >
+
+                    <span className="poeme-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="poeme-title">
+                      {poeme.title}
+                    </span>
+
+                    <span className="poeme-arrow">
+                      {isOpen ? "↑" : "→"}
+                    </span>
+
+                  </button>
+
+
+                  {/* --------------------------------
+                      POÈME OUVERT
+                  -------------------------------- */}
+
+                  {isOpen && (
+
+                    <article className="poeme-content">
+
+                      <p className="poeme-content-label">
+                        Poème
+                      </p>
+
+                      <h2 className="poeme-content-title">
+                        {poeme.title}
+                      </h2>
+
+                      <div className="poeme-content-line">
+                        ✦
+                      </div>
+
+                      <p className="poeme-text">
+                        {poeme.content}
+                      </p>
+
+                      <div className="poeme-decoration">
+                        ✦
+                      </div>
+
+                    </article>
+
+                  )}
+
+                </div>
+              );
+
+            })}
 
           </section>
+
         )}
 
 

@@ -753,3 +753,161 @@
         font-size: 1.1rem;
     }
 }
+/* ==========================================
+   BIBLIOTHÈQUE DES POÈMES
+========================================== */
+
+.poemes-intro {
+  max-width: 850px;
+  margin: 20px auto 45px;
+  padding: 0 25px;
+  text-align: center;
+}
+
+.poemes-intro-label {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.poemes-intro-text {
+  margin: 0;
+  font-style: italic;
+  line-height: 1.8;
+  opacity: 0.75;
+}
+
+
+/* ==========================================
+   LISTE DES POÈMES
+========================================== */
+
+.poemes-list {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.poeme-row {
+  border-top: 1px solid rgba(217, 182, 109, 0.35);
+}
+
+.poeme-row:last-child {
+  border-bottom: 1px solid rgba(217, 182, 109, 0.35);
+}
+
+.poeme-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 23px 12px;
+
+  background: transparent;
+  border: none;
+
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+
+  font-family: inherit;
+
+  transition:
+    padding-left 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.poeme-button:hover {
+  padding-left: 20px;
+}
+
+.poeme-number {
+  min-width: 32px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  opacity: 0.45;
+}
+
+.poeme-title {
+  flex: 1;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+}
+
+.poeme-arrow {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+
+/* ==========================================
+   POÈME OUVERT
+========================================== */
+
+.poeme-content {
+  margin: 0 12px 30px;
+  padding: 35px 35px;
+
+  border: 1px solid rgba(217, 182, 109, 0.2);
+
+  background:
+    rgba(255, 250, 238, 0.035);
+
+  animation: poemFade 0.3s ease;
+}
+
+.poeme-content-label {
+  margin: 0 0 12px;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+.poeme-content-title {
+  margin: 0 0 25px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.poeme-content-line {
+  width: 65px;
+  margin-bottom: 28px;
+
+  color: #d9b66d;
+}
+
+.poeme-text {
+  margin: 0;
+
+  white-space: pre-wrap;
+
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+.poeme-decoration {
+  margin-top: 30px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+@keyframes poemFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

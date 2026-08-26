@@ -61,7 +61,7 @@ export default function Jardin() {
               <br />
               <br />
               Vous pouvez vous asseoir sur un banc,
-              écouter quelques chansons, ouvrir mes carnets,
+              écouter quelques chansons, lire quelques poèmes,
               laisser un mot ou simplement vous promener.
             </p>
 
@@ -126,7 +126,7 @@ export default function Jardin() {
             </h3>
 
             <span className="mini-link">
-              Ouvrir les carnets →
+              Ouvrir l&apos;Atelier →
             </span>
 
           </div>
@@ -197,6 +197,41 @@ export default function Jardin() {
 
             <span className="mini-link">
               Écouter →
+            </span>
+
+          </div>
+
+        </Link>
+
+
+        {/* ==========================================
+            LA BIBLIOTHÈQUE DES POÈMES
+        ========================================== */}
+
+        <Link
+          href="/poemes"
+          className="place-card"
+        >
+
+          <img
+            src="/images/poeme.png"
+            alt="La Bibliothèque des poèmes"
+          />
+
+          <div className="card-text">
+
+            <p>
+              Quelques pages où les mots
+              <br />
+              ont choisi de rester.
+            </p>
+
+            <h3>
+              La Bibliothèque des poèmes
+            </h3>
+
+            <span className="mini-link">
+              Lire les poèmes →
             </span>
 
           </div>
