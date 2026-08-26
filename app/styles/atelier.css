@@ -1,0 +1,534 @@
+/* ==========================================
+   L'ATELIER — CARNET
+========================================== */
+
+.atelier {
+    min-height: 100vh;
+
+    padding: 100px 30px 90px;
+
+    color: #403d34;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(188, 153, 91, 0.12),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #101c18 0%,
+            #16251f 45%,
+            #0d1714 100%
+        );
+}
+
+
+/* ==========================================
+   EN-TÊTE
+========================================== */
+
+.atelier-header {
+    width: min(1100px, 94vw);
+
+    margin: 0 auto 35px;
+
+    text-align: center;
+}
+
+.atelier-header h1 {
+    margin: 0;
+
+    color: #eee7d8;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+
+    line-height: 1;
+}
+
+.atelier-header h1::after {
+    content: "❦";
+
+    display: block;
+
+    margin-top: 18px;
+
+    color: #d9b66d;
+
+    font-size: 1.3rem;
+}
+
+.atelier-header p {
+    margin: 0 0 10px;
+
+    color: #c8c5b9;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.1rem;
+
+    font-style: italic;
+}
+
+
+/* ==========================================
+   CARNET PRINCIPAL
+========================================== */
+
+.atelier-journal {
+    position: relative;
+
+    width: min(1000px, 94vw);
+
+    margin: 0 auto;
+
+    padding: 35px 55px 70px;
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.18)
+        ),
+        #f4ead7;
+
+    border:
+        1px solid rgba(217, 182, 109, 0.14);
+
+    box-shadow:
+        0 30px 75px rgba(0, 0, 0, 0.32);
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   TEXTURE DU PAPIER
+========================================== */
+
+.atelier-journal::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.35;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(130, 103, 63, 0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(130, 103, 63, 0.07),
+            transparent 25%
+        );
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.atelier-navigation {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 30px;
+
+    border-bottom:
+        1px solid rgba(94, 76, 49, 0.16);
+}
+
+.atelier-navigation a {
+    color: #635942;
+
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.05rem;
+
+    font-weight: 500;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.atelier-navigation a:hover {
+    color: #4f684f;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   CITATION
+========================================== */
+
+.atelier-quote {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin: 20px auto 50px;
+
+    text-align: center;
+}
+
+.atelier-quote p {
+    margin: 0;
+
+    color: #4b463b;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+.atelier-quote span {
+    display: block;
+
+    margin-top: 12px;
+
+    color: #9b8152;
+
+    font-size: 1.8rem;
+}
+
+
+/* ==========================================
+   PAGES / SECTIONS
+========================================== */
+
+.atelier-entry,
+#carnets,
+#esquisses,
+#apropos {
+    position: relative;
+
+    z-index: 2;
+
+    color: #4d493f;
+}
+
+
+/* ==========================================
+   TITRES DE SECTIONS
+========================================== */
+
+.atelier-entry-label {
+    margin: 0 0 7px;
+
+    color: #80683f;
+
+    font-size: 0.82rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+.atelier-entry h2,
+#carnets h2,
+#esquisses h2,
+#apropos h2 {
+    margin: 0;
+
+    color: #30432f;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.3rem, 5vw, 4rem);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+}
+
+
+/* ==========================================
+   DATE
+========================================== */
+
+.atelier-entry-date {
+    margin: 10px 0 30px;
+
+    color: #756b59;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+}
+
+
+/* ==========================================
+   PHOTO FAÇON POLAROID
+========================================== */
+
+.atelier-photo {
+    width: min(650px, 100%);
+
+    margin: 0 auto 40px;
+
+    padding: 12px 12px 28px;
+
+    background: #f8f3e8;
+
+    box-shadow:
+        0 16px 35px rgba(55, 45, 34, 0.20);
+
+    transform: rotate(-1deg);
+
+    transition:
+        transform 0.35s ease;
+}
+
+.atelier-photo:hover {
+    transform:
+        rotate(0deg)
+        translateY(-4px);
+}
+
+.atelier-photo img {
+    width: 100%;
+
+    height: 390px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   TEXTE DU JOURNAL
+========================================== */
+
+.atelier-text {
+    color: #4b463c;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.2rem;
+
+    line-height: 1.9;
+}
+
+.atelier-text p {
+    margin: 0 0 18px;
+
+    color: #4b463c;
+}
+
+
+/* ==========================================
+   TEXTES DES AUTRES RUBRIQUES
+========================================== */
+
+#carnets p,
+#esquisses p,
+#apropos p {
+    color: #514c42;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.12rem;
+
+    line-height: 1.8;
+}
+
+#carnets .atelier-entry-label,
+#esquisses .atelier-entry-label,
+#apropos .atelier-entry-label {
+    color: #80683f;
+
+    font-family: inherit;
+
+    font-size: 0.82rem;
+
+    line-height: normal;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================
+   PETITE DÉCORATION
+========================================== */
+
+.atelier-decoration {
+    margin: 35px 0;
+
+    text-align: center;
+
+    color: #9b8152;
+
+    font-size: 1.4rem;
+
+    letter-spacing: 0.25em;
+}
+
+
+/* ==========================================
+   PHRASE FINALE
+========================================== */
+
+.atelier-footer {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(700px, 90vw);
+
+    margin: 55px auto 0;
+
+    text-align: center;
+}
+
+.atelier-footer p {
+    margin: 0;
+
+    color: #c2bfb4;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.2rem;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+.atelier-footer::before {
+    content: "❦";
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #d9b66d;
+
+    font-size: 1.2rem;
+}
+
+
+/* ==========================================
+   TÉLÉPHONE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .atelier {
+        padding: 55px 12px 60px;
+    }
+
+    .atelier-header {
+        width: 100%;
+
+        margin-bottom: 25px;
+    }
+
+    .atelier-header h1 {
+        font-size: 3.3rem;
+    }
+
+    .atelier-header p {
+        font-size: 1rem;
+    }
+
+    .atelier-journal {
+        width: 100%;
+
+        padding: 25px 20px 50px;
+
+        border-radius: 4px;
+    }
+
+    .atelier-navigation {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        padding-bottom: 18px;
+
+        margin-bottom: 25px;
+    }
+
+    .atelier-navigation a {
+        font-size: 0.9rem;
+    }
+
+    .atelier-quote {
+        margin: 15px auto 35px;
+    }
+
+    .atelier-quote p {
+        font-size: 1.45rem;
+    }
+
+    .atelier-entry h2,
+    #carnets h2,
+    #esquisses h2,
+    #apropos h2 {
+        font-size: 2.6rem;
+    }
+
+    .atelier-photo {
+        padding: 8px 8px 20px;
+
+        margin-bottom: 30px;
+    }
+
+    .atelier-photo img {
+        height: 250px;
+    }
+
+    .atelier-text {
+        font-size: 1.08rem;
+
+        line-height: 1.8;
+    }
+
+    #carnets p,
+    #esquisses p,
+    #apropos p {
+        font-size: 1.05rem;
+
+        line-height: 1.75;
+    }
+
+    .atelier-footer {
+        margin-top: 40px;
+    }
+}

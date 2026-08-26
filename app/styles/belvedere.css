@@ -1,0 +1,587 @@
+/* ==========================================
+   LE BELVÉDÈRE
+========================================== */
+
+.belvedere {
+    min-height: 100vh;
+
+    padding: 100px 35px 100px;
+
+    color: #eee7d8;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(188, 153, 91, 0.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(91, 122, 91, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #101c18 0%,
+            #16251f 45%,
+            #0d1714 100%
+        );
+}
+
+
+/* ==========================================
+   EN-TÊTE / IMAGE DU BELVÉDÈRE
+========================================== */
+
+.belvedere-header {
+    position: relative;
+
+    width: min(1150px, 94vw);
+
+    height: 560px;
+
+    margin: 0 auto 90px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 35px 85px rgba(0, 0, 0, 0.38);
+}
+
+.belvedere-header::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        url("/images/belvedere.png")
+        center / cover
+        no-repeat;
+
+    transition:
+        transform 1.2s ease;
+}
+
+.belvedere-header:hover::before {
+    transform: scale(1.025);
+}
+
+.belvedere-header::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(12, 22, 18, 0.82),
+            rgba(12, 22, 18, 0.25) 58%,
+            rgba(12, 22, 18, 0.02)
+        );
+}
+
+
+/* ==========================================
+   TEXTE DU HERO
+========================================== */
+
+.belvedere-type,
+.belvedere-header h1,
+.belvedere-intro {
+    position: absolute;
+
+    z-index: 2;
+}
+
+.belvedere-type {
+    left: 60px;
+
+    bottom: 160px;
+
+    margin: 0;
+
+    color: #dfc78b;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    font-style: italic;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+.belvedere-header h1 {
+    left: 55px;
+
+    bottom: 72px;
+
+    margin: 0;
+
+    color: #f4efe4;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(4rem, 8vw, 6.5rem);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+}
+
+.belvedere-intro {
+    left: 60px;
+
+    bottom: 27px;
+
+    margin: 0;
+
+    color: #e4e2d9;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.05rem;
+
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   PETITE LIGNE DORÉE
+========================================== */
+
+.belvedere-header h1::after {
+    content: "❦";
+
+    display: block;
+
+    margin-top: 18px;
+
+    color: #d9b66d;
+
+    font-size: 1.1rem;
+}
+
+
+/* ==========================================
+   CHEMIN PARCOURU
+========================================== */
+
+.belvedere-journey {
+    width: min(1150px, 94vw);
+
+    margin: 0 auto 100px;
+
+    text-align: center;
+}
+
+.belvedere-label {
+    margin: 0 0 35px;
+
+    color: #d9b66d;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+.belvedere-line {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ==========================================
+   LIEUX DU PARCOURS
+========================================== */
+
+.journey-place {
+    min-width: 100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #aeb4a6;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.journey-place:hover {
+    transform: translateY(-4px);
+
+    color: #e3d3a6;
+}
+
+.journey-place.current {
+    color: #dfc78b;
+}
+
+
+/* ==========================================
+   ICÔNES
+========================================== */
+
+.journey-icon {
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(235, 231, 211, 0.07);
+
+    border:
+        1px solid rgba(217, 201, 142, 0.16);
+
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.025);
+
+    font-size: 1.25rem;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.journey-place.current .journey-icon {
+    background:
+        rgba(217, 182, 109, 0.12);
+
+    border-color:
+        rgba(217, 182, 109, 0.40);
+}
+
+.journey-name {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 0.95rem;
+}
+
+.journey-arrow {
+    color: #8d987f;
+
+    font-size: 1rem;
+
+    opacity: 0.75;
+}
+
+
+/* ==========================================
+   HISTOIRE
+========================================== */
+
+.belvedere-story {
+    position: relative;
+
+    width: min(760px, 92vw);
+
+    margin: 0 auto 100px;
+
+    padding: 70px 55px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(247, 240, 227, 0.97),
+            rgba(235, 226, 208, 0.95)
+        );
+
+    border:
+        1px solid rgba(217, 182, 109, 0.13);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.28);
+}
+
+
+/* Bordure intérieure */
+
+.belvedere-story::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 14px;
+
+    border:
+        1px solid rgba(126, 103, 62, 0.15);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   TEXTE
+========================================== */
+
+.belvedere-story p {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 18px;
+
+    color: #5e584d;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.35rem;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================
+   ORNEMENTS
+========================================== */
+
+.story-decoration {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 5px 0 35px;
+
+    color: #a1844e;
+
+    font-size: 1.6rem;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* ==========================================
+   MOT DE FIN
+========================================== */
+
+.belvedere-goodbye {
+    width: min(750px, 90vw);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.goodbye-small {
+    margin: 0 0 12px;
+
+    color: #d9b66d;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+.belvedere-goodbye h2 {
+    margin: 0 0 20px;
+
+    color: #eee7d8;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.7rem, 5vw, 4rem);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+}
+
+.belvedere-goodbye > p:last-child {
+    margin: 0;
+
+    color: #aaa99d;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.15rem;
+
+    font-style: italic;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   RETOUR AU JARDIN
+========================================== */
+
+.belvedere-footer {
+    margin-top: 70px;
+
+    text-align: center;
+}
+
+.belvedere-footer a {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border:
+        1px solid rgba(217, 182, 109, 0.25);
+
+    border-radius: 999px;
+
+    color: #d9c48f;
+
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.belvedere-footer a:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(217, 182, 109, 0.08);
+
+    border-color:
+        rgba(217, 182, 109, 0.45);
+}
+
+
+/* ==========================================
+   TÉLÉPHONE
+========================================== */
+
+@media (max-width: 800px) {
+
+    .belvedere {
+        padding: 55px 15px 70px;
+    }
+
+    .belvedere-header {
+        width: 100%;
+
+        height: 500px;
+
+        margin-bottom: 60px;
+
+        border-radius: 18px;
+    }
+
+    .belvedere-type {
+        left: 25px;
+
+        bottom: 155px;
+    }
+
+    .belvedere-header h1 {
+        left: 25px;
+
+        bottom: 75px;
+
+        font-size: 3.5rem;
+    }
+
+    .belvedere-intro {
+        left: 25px;
+
+        bottom: 25px;
+
+        right: 25px;
+
+        font-size: 1rem;
+    }
+
+    .belvedere-journey {
+        width: 100%;
+
+        margin-bottom: 65px;
+    }
+
+    .belvedere-line {
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+    .journey-arrow {
+        transform: rotate(90deg);
+
+        margin: 2px 0;
+    }
+
+    .journey-place {
+        flex-direction: row;
+
+        gap: 12px;
+
+        min-width: 0;
+    }
+
+    .journey-icon {
+        width: 43px;
+
+        height: 43px;
+    }
+
+    .belvedere-story {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 55px 28px;
+
+        margin-bottom: 65px;
+    }
+
+    .belvedere-story p {
+        font-size: 1.15rem;
+    }
+
+    .belvedere-goodbye h2 {
+        font-size: 2.7rem;
+    }
+
+    .belvedere-goodbye > p:last-child {
+        font-size: 1.05rem;
+    }
+}

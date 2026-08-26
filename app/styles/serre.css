@@ -1,0 +1,755 @@
+/* ==========================================
+   LA SERRE
+========================================== */
+
+.serre {
+    min-height: 100vh;
+
+    padding: 100px 35px 100px;
+
+    color: #eee7d8;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(188, 153, 91, 0.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(91, 122, 91, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #101c18 0%,
+            #16251f 45%,
+            #0d1714 100%
+        );
+}
+
+
+/* ==========================================
+   EN-TÊTE
+========================================== */
+
+.serre-header {
+    width: min(900px, 94vw);
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+.serre-type {
+    margin: 0 0 10px;
+
+    color: #e1c98e;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    font-style: italic;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+.serre-header h1 {
+    margin: 0;
+
+    color: #eee7d8;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(4rem, 8vw, 6rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.serre-header h1::after {
+    content: "❦";
+
+    display: block;
+
+    margin-top: 18px;
+
+    color: #d9b66d;
+
+    font-size: 1.3rem;
+}
+
+.serre-intro {
+    max-width: 620px;
+
+    margin: 25px auto 0;
+
+    color: #b9b7aa;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.25rem;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   LES TROIS ESPACES
+========================================== */
+
+.serre-spaces {
+    width: min(1120px, 94vw);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+
+/* ==========================================
+   ESPACE
+========================================== */
+
+.serre-space {
+    position: relative;
+
+    min-height: 390px;
+
+    padding: 45px 30px 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(235, 231, 211, 0.13),
+            rgba(216, 221, 195, 0.06)
+        );
+
+    border:
+        1px solid rgba(217, 201, 142, 0.18);
+
+    border-radius: 120px 120px 25px 25px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 22px 55px rgba(0, 0, 0, 0.22);
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.serre-space:hover {
+    transform: translateY(-8px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(235, 231, 211, 0.18),
+            rgba(216, 221, 195, 0.09)
+        );
+
+    border-color:
+        rgba(217, 201, 142, 0.30);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.07),
+        0 30px 70px rgba(0, 0, 0, 0.30);
+}
+
+
+/* ==========================================
+   PETITE LUEUR BOTANIQUE
+========================================== */
+
+.serre-space::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: 24px;
+    right: 28px;
+
+    color: #788b72;
+
+    font-size: 0.75rem;
+
+    opacity: 0.65;
+}
+
+
+/* ==========================================
+   ICÔNES
+========================================== */
+
+.serre-icon {
+    width: 76px;
+
+    height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(220, 225, 204, 0.09);
+
+    border:
+        1px solid rgba(217, 201, 142, 0.14);
+
+    font-size: 2.2rem;
+
+    box-shadow:
+        inset 0 0 25px rgba(164, 177, 138, 0.06);
+
+    transition:
+        transform 0.35s ease;
+}
+
+.serre-space:hover .serre-icon {
+    transform:
+        translateY(-3px)
+        rotate(-3deg);
+}
+
+
+/* ==========================================
+   TYPE
+========================================== */
+
+.serre-space-type {
+    margin: 0 0 8px;
+
+    color: #d9b66d;
+
+    font-size: 0.78rem;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================
+   TITRES
+========================================== */
+
+.serre-space h2 {
+    margin: 0 0 17px;
+
+    color: #eee7d8;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2.25rem;
+
+    font-weight: 500;
+
+    line-height: 1.05;
+}
+
+
+/* ==========================================
+   DESCRIPTIONS
+========================================== */
+
+.serre-space > p:not(.serre-space-type) {
+    margin: 0;
+
+    color: #b8b8a9;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.08rem;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   BOUTONS
+========================================== */
+
+.serre-button {
+    margin-top: auto;
+
+    padding: 13px 23px;
+
+    border:
+        1px solid rgba(217, 182, 109, 0.38);
+
+    border-radius: 999px;
+
+    background:
+        rgba(217, 182, 109, 0.08);
+
+    color: #dfc992;
+
+    cursor: pointer;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.serre-button:hover {
+    transform: translateY(-2px);
+
+    background:
+        rgba(217, 182, 109, 0.16);
+
+    border-color:
+        rgba(217, 182, 109, 0.55);
+}
+
+
+/* ==========================================
+   PANNEAUX
+========================================== */
+
+.serre-panel {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(10, 20, 16, 0.76);
+
+    backdrop-filter: blur(9px);
+
+    animation:
+        serreFadeIn 0.3s ease;
+}
+
+
+/* ==========================================
+   PAPIER
+========================================== */
+
+.serre-paper {
+    position: relative;
+
+    width: min(680px, 94vw);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7f0e3,
+            #eee5d3
+        );
+
+    border:
+        1px solid rgba(217, 182, 109, 0.22);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.45);
+
+    color: #4b493d;
+}
+
+.serre-paper::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid rgba(126, 103, 62, 0.18);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   FERMER
+========================================== */
+
+.serre-close {
+    position: absolute;
+
+    top: 18px;
+
+    right: 22px;
+
+    z-index: 2;
+
+    border: none;
+
+    background: transparent;
+
+    color: #7c735f;
+
+    cursor: pointer;
+
+    font-size: 1.7rem;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.serre-close:hover {
+    color: #3f5843;
+
+    transform: rotate(5deg);
+}
+
+
+/* ==========================================
+   TITRE DU PAPIER
+========================================== */
+
+.serre-paper-label {
+    margin: 0 0 10px;
+
+    color: #927844;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+.serre-paper h2 {
+    margin: 0;
+
+    color: #354b39;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.3rem, 5vw, 3.4rem);
+
+    font-weight: 500;
+}
+
+.serre-paper-intro {
+    margin: 15px 0 30px;
+
+    color: #777260;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.1rem;
+
+    font-style: italic;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   CHAMPS
+========================================== */
+
+.serre-textarea,
+.serre-input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid rgba(90, 101, 79, 0.22);
+
+    border-radius: 5px;
+
+    background:
+        rgba(255, 252, 242, 0.62);
+
+    color: #47483d;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.serre-textarea {
+    min-height: 150px;
+
+    padding: 18px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+.serre-input {
+    padding: 13px 15px;
+}
+
+.serre-textarea:focus,
+.serre-input:focus {
+    border-color: #9b8654;
+
+    box-shadow:
+        0 0 0 3px rgba(155, 134, 84, 0.10);
+}
+
+.serre-textarea::placeholder,
+.serre-input::placeholder {
+    color: #aaa18d;
+
+    font-style: italic;
+}
+
+
+/* ==========================================
+   AUTEUR
+========================================== */
+
+.serre-author {
+    margin-top: 22px;
+}
+
+.serre-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #716b59;
+
+    font-size: 0.85rem;
+}
+
+.serre-checkbox {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 13px;
+
+    color: #6d695b;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+}
+
+.serre-checkbox input {
+    accent-color: #687c61;
+}
+
+
+/* ==========================================
+   ENVOI
+========================================== */
+
+.serre-submit {
+    display: block;
+
+    margin: 28px auto 0;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background:
+        #75886d;
+
+    color: #fffdf5;
+
+    cursor: pointer;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.serre-submit:hover {
+    transform: translateY(-2px);
+
+    background:
+        #60745b;
+}
+
+
+/* ==========================================
+   PHRASE FINALE
+========================================== */
+
+.serre-footer {
+    width: min(700px, 90vw);
+
+    margin: 90px auto 0;
+
+    text-align: center;
+}
+
+.serre-footer::before {
+    content: "❦";
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #d9b66d;
+
+    font-size: 1.2rem;
+}
+
+.serre-footer p {
+    margin: 0;
+
+    color: #aaa99d;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.25rem;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes serreFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ==========================================
+   TÉLÉPHONE
+========================================== */
+
+@media (max-width: 800px) {
+
+    .serre {
+        padding: 55px 15px 70px;
+    }
+
+    .serre-header {
+        width: 100%;
+
+        margin-bottom: 45px;
+    }
+
+    .serre-header h1 {
+        font-size: 3.7rem;
+    }
+
+    .serre-intro {
+        font-size: 1.08rem;
+    }
+
+    .serre-spaces {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .serre-space {
+        min-height: 330px;
+
+        padding: 35px 25px;
+
+        border-radius: 100px 100px 20px 20px;
+    }
+
+    .serre-space h2 {
+        font-size: 2.05rem;
+    }
+
+    .serre-space > p:not(.serre-space-type) {
+        font-size: 1.05rem;
+    }
+
+    .serre-paper {
+        width: 100%;
+
+        max-height: 88vh;
+
+        padding: 45px 25px;
+    }
+
+    .serre-paper h2 {
+        font-size: 2.5rem;
+    }
+
+    .serre-footer {
+        margin-top: 60px;
+    }
+
+    .serre-footer p {
+        font-size: 1.1rem;
+    }
+}

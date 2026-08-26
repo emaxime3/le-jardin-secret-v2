@@ -1,26 +1,1684 @@
-@import "tailwindcss";
+/* ==========================================
+   LE JARDIN SECRET — STYLES GLOBAUX
+========================================== */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "./styles/home.css";
+@import "./styles/garden.css";
+@import "./styles/lieu.css";
+@import "./styles/gramophone.css";
+@import "./styles/atelier.css";
+@import "./styles/serre.css";
+@import "./styles/belvedere.css";
+
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* ==========================================
+   DOCUMENT
+========================================== */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    color: #eee7d8;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(188, 153, 91, 0.12),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #101c18 0%,
+            #16251f 45%,
+            #0d1714 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   IMAGES
+========================================== */
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+/* ==========================================
+   LIENS
+========================================== */
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   BOUTONS
+========================================== */
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
+/* ==========================================
+   SÉLECTION
+========================================== */
+
+::selection {
+    background: rgba(217, 182, 109, 0.25);
+
+    color: #f3ecdf;
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0d1714;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6f775f;
+
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1844d;
+}
+
+
+/* ==========================================
+   TÉLÉPHONE
+========================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+}
+/* ==========================================
+   LES CRÉATIONS
+========================================== */
+
+.creations {
+    min-height: 100vh;
+
+    padding: 90px 30px 100px;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(180, 195, 145, 0.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(205, 178, 105, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #14231d,
+            #1c2d25 50%,
+            #101b17
+        );
+
+    color: #eee8da;
+}
+
+
+/* ==========================================
+   EN-TÊTE
+========================================== */
+
+.creations-header {
+    width: min(850px, 94vw);
+
+    margin: 0 auto 75px;
+
+    text-align: center;
+}
+
+.creations-type {
+    margin: 0 0 12px;
+
+    color: #d9b66d;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 0.9rem;
+
+    font-style: italic;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+.creations-header h1 {
+    margin: 0;
+
+    color: #f1ecdf;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(4rem, 8vw, 6rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.creations-intro {
+    margin: 25px auto 0;
+
+    color: #aeb6a8;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.2rem;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   ESPACE VIDE / PREMIÈRES CRÉATIONS
+========================================== */
+
+.creations-empty {
+    position: relative;
+
+    width: min(700px, 92vw);
+
+    margin: 0 auto;
+
+    padding: 65px 50px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background:
+        rgba(245, 239, 222, 0.96);
+
+    border:
+        1px solid rgba(217, 182, 109, 0.16);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.30);
+}
+
+
+/* petite bordure intérieure */
+
+.creations-empty::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 14px;
+
+    border:
+        1px solid rgba(126, 103, 62, 0.14);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   FLEUR
+========================================== */
+
+.creations-flower {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 20px;
+
+    font-size: 3rem;
+}
+
+.creations-label {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 10px;
+
+    color: #927844;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+.creations-empty h2 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 auto 20px;
+
+    color: #354b39;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+}
+
+.creations-empty > p:last-child {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    color: #777260;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.12rem;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   RETOUR
+========================================== */
+
+.creations-footer {
+    margin-top: 65px;
+
+    text-align: center;
+}
+
+.creations-footer a {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border:
+        1px solid rgba(217, 182, 109, 0.25);
+
+    border-radius: 999px;
+
+    color: #d9c48f;
+
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.creations-footer a:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(217, 182, 109, 0.08);
+
+    border-color:
+        rgba(217, 182, 109, 0.45);
+}
+
+
+/* ==========================================
+   TÉLÉPHONE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .creations {
+        padding: 55px 15px 70px;
+    }
+
+    .creations-header {
+        margin-bottom: 50px;
+    }
+
+    .creations-header h1 {
+        font-size: 3.6rem;
+    }
+
+    .creations-intro {
+        font-size: 1.05rem;
+    }
+
+    .creations-empty {
+        width: 100%;
+
+        padding: 55px 28px;
+    }
+
+    .creations-empty h2 {
+        font-size: 2.4rem;
+    }
+
+    .creations-empty > p:last-child {
+        font-size: 1.05rem;
+    }
+}
+/* ==========================================
+   LE JARDINIER — ESPACE PRIVÉ
+========================================== */
+
+.jardinier {
+    min-height: 100vh;
+
+    padding: 75px 30px 110px;
+
+    background:
+        radial-gradient(
+            circle at 12% 15%,
+            rgba(180, 195, 145, 0.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 88% 75%,
+            rgba(205, 178, 105, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #14231d,
+            #1c2d25 50%,
+            #101b17
+        );
+
+    color: #eee8da;
+}
+
+
+/* ==========================================
+   CHARGEMENT
+========================================== */
+
+.jardinier-loading {
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #c9c5b5;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.3rem;
+
+    font-style: italic;
+}
+
+
+/* ==========================================
+   EN-TÊTE
+========================================== */
+
+.jardinier-header {
+    width: min(850px, 94vw);
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.jardinier-type {
+    margin: 0 0 12px;
+
+    color: #d9b66d;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+.jardinier-header h1 {
+    margin: 0;
+
+    color: #f1ecdf;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(4rem, 8vw, 6rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.jardinier-header > p:last-child {
+    margin: 22px auto 0;
+
+    color: #aeb6a8;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.2rem;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   STATISTIQUES
+========================================== */
+
+.jardinier-stats {
+    width: min(620px, 94vw);
+
+    margin: 0 auto 70px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.jardinier-stat {
+    padding: 28px 20px;
+
+    text-align: center;
+
+    background:
+        rgba(245, 239, 222, 0.08);
+
+    border:
+        1px solid rgba(217, 182, 109, 0.15);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(5px);
+}
+
+.jardinier-stat span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 1.7rem;
+}
+
+.jardinier-stat strong {
+    display: block;
+
+    color: #e2c982;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2.5rem;
+
+    font-weight: 500;
+}
+
+.jardinier-stat p {
+    margin: 3px 0 0;
+
+    color: #aeb6a8;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================
+   SECTIONS
+========================================== */
+
+.jardinier-section {
+    width: min(950px, 94vw);
+
+    margin: 0 auto 75px;
+}
+
+.jardinier-section-title {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+
+    padding-bottom: 16px;
+
+    border-bottom:
+        1px solid rgba(217, 182, 109, 0.15);
+}
+
+.jardinier-section-title p {
+    margin: 0 0 4px;
+
+    color: #a18c61;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+.jardinier-section-title h2 {
+    margin: 0;
+
+    color: #f0eadc;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 3rem;
+
+    font-weight: 500;
+}
+
+.jardinier-section-title > span {
+    min-width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(217, 182, 109, 0.12);
+
+    color: #d9b66d;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.1rem;
+}
+
+
+/* ==========================================
+   LISTE
+========================================== */
+
+.jardinier-list {
+    display: grid;
+
+    gap: 20px;
+}
+
+
+/* ==========================================
+   CARTE
+========================================== */
+
+.jardinier-card {
+    position: relative;
+
+    padding: 30px;
+
+    background:
+        rgba(245, 239, 222, 0.96);
+
+    border:
+        1px solid rgba(217, 182, 109, 0.15);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    color: #4c4a40;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.jardinier-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 28px 60px rgba(0, 0, 0, 0.30);
+}
+
+
+/* ==========================================
+   HAUT DE CARTE
+========================================== */
+
+.jardinier-card-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.jardinier-card-type {
+    color: #8d7447;
+
+    font-size: 0.78rem;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+.jardinier-date {
+    color: #a29b89;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 0.9rem;
+}
+
+
+/* ==========================================
+   CONTENU
+========================================== */
+
+.jardinier-content {
+    padding: 5px 0 18px;
+}
+
+.jardinier-content p {
+    margin: 0;
+
+    color: #4e4a40;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.35rem;
+
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+}
+
+
+/* ==========================================
+   AUTEUR
+========================================== */
+
+.jardinier-author {
+    margin-bottom: 25px;
+
+    color: #8c806d;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 0.95rem;
+
+    font-style: italic;
+}
+
+
+/* ==========================================
+   ACTIONS
+========================================== */
+
+.jardinier-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.jardinier-approve,
+.jardinier-reject {
+    padding: 11px 19px;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.jardinier-approve {
+    border:
+        1px solid rgba(104, 124, 97, 0.35);
+
+    background:
+        rgba(117, 136, 109, 0.13);
+
+    color: #52664d;
+}
+
+.jardinier-approve:hover {
+    transform: translateY(-2px);
+
+    background:
+        rgba(117, 136, 109, 0.25);
+}
+
+.jardinier-reject {
+    border:
+        1px solid rgba(126, 103, 62, 0.18);
+
+    background: transparent;
+
+    color: #897d68;
+}
+
+.jardinier-reject:hover {
+    transform: translateY(-2px);
+
+    background:
+        rgba(126, 103, 62, 0.08);
+}
+
+
+/* ==========================================
+   CRÉATIONS FLEURIES
+========================================== */
+
+.jardinier-card-approved {
+    border-left:
+        4px solid #a18b58;
+}
+
+.jardinier-card-approved .jardinier-content p {
+    color: #455444;
+}
+
+
+/* ==========================================
+   ESPACE VIDE
+========================================== */
+
+.jardinier-empty {
+    padding: 55px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(245, 239, 222, 0.06);
+
+    border:
+        1px solid rgba(217, 182, 109, 0.10);
+}
+
+.jardinier-empty > div {
+    margin-bottom: 12px;
+
+    font-size: 2rem;
+}
+
+.jardinier-empty h3 {
+    margin: 0 0 8px;
+
+    color: #ddd7c8;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.8rem;
+
+    font-weight: 500;
+}
+
+.jardinier-empty p {
+    margin: 0;
+
+    color: #929c91;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.05rem;
+
+    font-style: italic;
+}
+
+
+/* ==========================================
+   NETTOYAGE
+========================================== */
+
+.jardinier-clean {
+    display: block;
+
+    margin: 10px auto 0;
+
+    padding: 11px 20px;
+
+    border:
+        1px solid rgba(217, 182, 109, 0.18);
+
+    border-radius: 999px;
+
+    background: transparent;
+
+    color: #9e9177;
+
+    cursor: pointer;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 0.9rem;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.jardinier-clean:hover {
+    background:
+        rgba(217, 182, 109, 0.08);
+
+    color: #d2c29c;
+}
+
+/* ==========================================
+   NAVIGATION DU JARDINIER
+========================================== */
+
+.jardinier-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.jardinier-navigation button {
+    display: inline-block;
+
+    margin: 0;
+
+    padding: 11px 22px;
+
+    border: 1px solid rgba(217, 182, 109, 0.18);
+
+    border-radius: 999px;
+
+    background: transparent;
+
+    color: #9e9177;
+
+    cursor: pointer;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 0.95rem;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.jardinier-navigation button:hover {
+    background: rgba(217, 182, 109, 0.08);
+
+    color: #d2c29c;
+
+    transform: translateY(-2px);
+}
+/* ==========================================
+   TÉLÉPHONE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .jardinier {
+        padding: 55px 15px 75px;
+    }
+
+    .jardinier-header {
+        margin-bottom: 45px;
+    }
+
+    .jardinier-header h1 {
+        font-size: 3.7rem;
+    }
+
+    .jardinier-stats {
+        width: 100%;
+
+        margin-bottom: 55px;
+    }
+
+    .jardinier-section {
+        width: 100%;
+
+        margin-bottom: 55px;
+    }
+
+    .jardinier-section-title h2 {
+        font-size: 2.4rem;
+    }
+
+    .jardinier-card {
+        padding: 24px 20px;
+    }
+
+    .jardinier-card-top {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+    .jardinier-content p {
+        font-size: 1.2rem;
+    }
+
+    .jardinier-actions {
+        flex-direction: column;
+    }
+
+    .jardinier-approve,
+    .jardinier-reject {
+        width: 100%;
+    }
+}
+/* ==========================================
+   LE MUR DES CRÉATIONS
+========================================== */
+
+.creations {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 85px 30px 110px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(118, 145, 111, 0.22),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(178, 151, 91, 0.12),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #14231d,
+            #1d3027 48%,
+            #112019
+        );
+
+    color: #eee8da;
+}
+
+
+/* ==========================================
+   PETITES OMBRES VÉGÉTALES
+========================================== */
+
+.creations::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.35;
+
+    background:
+        radial-gradient(
+            circle at 8% 80%,
+            rgba(132, 157, 115, 0.15),
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(132, 157, 115, 0.12),
+            transparent 22%
+        );
+}
+
+
+/* ==========================================
+   EN-TÊTE
+========================================== */
+
+.creations-header {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(850px, 94vw);
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+.creations-type {
+    margin: 0 0 12px;
+
+    color: #d9b66d;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+.creations-header h1 {
+    margin: 0;
+
+    color: #f2ede1;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(4rem, 8vw, 6rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.creations-intro {
+    margin: 24px auto 0;
+
+    color: #b4beb0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.2rem;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   MUR
+========================================== */
+
+.creations-grid {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1120px, 94vw);
+
+    margin: 0 auto;
+
+    padding: 55px 45px 65px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 55px 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(38, 58, 47, 0.72),
+            rgba(24, 42, 34, 0.82)
+        );
+
+    border:
+        1px solid rgba(173, 151, 98, 0.14);
+
+    box-shadow:
+        inset 0 0 80px rgba(0, 0, 0, 0.18),
+        0 35px 80px rgba(0, 0, 0, 0.28);
+}
+
+
+/* ==========================================
+   PETITS PAPIERS
+========================================== */
+
+.creation-card {
+    position: relative;
+
+    min-height: 245px;
+
+    padding: 42px 28px 28px;
+
+    box-sizing: border-box;
+
+    background:
+        #f4ead4;
+
+    color: #4b483e;
+
+    box-shadow:
+        0 18px 30px rgba(0, 0, 0, 0.28);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* différentes inclinaisons */
+
+.creation-card:nth-child(3n + 1) {
+    transform: rotate(-2deg);
+}
+
+.creation-card:nth-child(3n + 2) {
+    transform: rotate(1.4deg);
+}
+
+.creation-card:nth-child(3n) {
+    transform: rotate(-0.8deg);
+}
+
+.creation-card:hover {
+    z-index: 5;
+
+    transform:
+        translateY(-9px)
+        rotate(0deg);
+
+    box-shadow:
+        0 28px 45px rgba(0, 0, 0, 0.34);
+}
+
+
+/* ==========================================
+   EFFET PAPIER
+========================================== */
+
+.creation-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border:
+        1px solid rgba(119, 96, 55, 0.12);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   PUNAISE
+========================================== */
+
+.creation-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 13px;
+
+    left: 50%;
+
+    width: 16px;
+
+    height: 16px;
+
+    border-radius: 50%;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #d8c28f 0 18%,
+            #9b7741 45%,
+            #624a2c 100%
+        );
+
+    box-shadow:
+        0 3px 5px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ==========================================
+   PETITE FLEUR
+========================================== */
+
+.creation-card-flower {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 12px;
+
+    font-size: 1.7rem;
+}
+
+
+/* ==========================================
+   TYPE
+========================================== */
+
+.creation-card-type {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 17px;
+
+    color: #907443;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================
+   TEXTE
+========================================== */
+
+.creation-card-content {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 115px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.creation-card-content p {
+    margin: 0;
+
+    color: #514d42;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.3rem;
+
+    line-height: 1.75;
+
+    white-space: pre-wrap;
+}
+
+
+/* ==========================================
+   SIGNATURE
+========================================== */
+
+.creation-card-footer {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 24px;
+
+    padding-top: 13px;
+
+    border-top:
+        1px solid rgba(119, 96, 55, 0.14);
+
+    color: #8b806c;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 0.9rem;
+
+    font-style: italic;
+}
+
+.creation-card-footer span:last-child {
+    color: #a1844e;
+
+    font-size: 1.25rem;
+}
+
+
+/* ==========================================
+   ÉTAT VIDE
+========================================== */
+
+.creations-empty {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(700px, 92vw);
+
+    margin: 0 auto;
+
+    padding: 65px 45px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background:
+        #f4ead4;
+
+    color: #4b483e;
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.28);
+}
+
+.creations-empty::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid rgba(119, 96, 55, 0.14);
+
+    pointer-events: none;
+}
+
+.creations-flower {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 18px;
+
+    font-size: 3rem;
+}
+
+.creations-label {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 10px;
+
+    color: #907443;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+.creations-empty h2 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 auto 18px;
+
+    color: #354b39;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+}
+
+.creations-empty > p:last-child {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    color: #777260;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   RETOUR
+========================================== */
+
+.creations-footer {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 65px;
+
+    text-align: center;
+}
+
+.creations-footer a {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border:
+        1px solid rgba(217, 182, 109, 0.25);
+
+    border-radius: 999px;
+
+    color: #d9c48f;
+
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.creations-footer a:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(217, 182, 109, 0.08);
+}
+
+
+/* ==========================================
+   TÉLÉPHONE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .creations-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 40px 25px;
+
+        padding: 40px 25px 50px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .creations {
+        padding: 55px 12px 75px;
+    }
+
+    .creations-header {
+        margin-bottom: 45px;
+    }
+
+    .creations-header h1 {
+        font-size: 3.7rem;
+    }
+
+    .creations-intro {
+        font-size: 1.05rem;
+    }
+
+    .creations-grid {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding: 35px 22px 45px;
+    }
+
+    .creation-card:nth-child(3n + 1),
+    .creation-card:nth-child(3n + 2),
+    .creation-card:nth-child(3n) {
+        transform: rotate(0deg);
+    }
+
+    .creation-card {
+        min-height: 220px;
+    }
+
+    .creation-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .creation-card-content {
+        min-height: auto;
+    }
+
+    .creation-card-content p {
+        font-size: 1.2rem;
+    }
+
+    .creations-empty {
+        width: 100%;
+
+        padding: 55px 28px;
+    }
+}
+/* ==========================================
+   VARIATIONS DES PETITS PAPIERS
+========================================== */
+
+.creation-card:nth-child(4n + 1) {
+    min-height: 230px;
+}
+
+.creation-card:nth-child(4n + 2) {
+    min-height: 270px;
+}
+
+.creation-card:nth-child(4n + 3) {
+    min-height: 245px;
+}
+
+.creation-card:nth-child(4n) {
+    min-height: 285px;
+}
+
+
+/* Quelques petites différences visuelles */
+
+.creation-card:nth-child(3n + 1) .creation-card-flower::after {
+    content: " ❧";
+
+    color: #a1844e;
+
+    font-size: 0.85rem;
+}
+
+.creation-card:nth-child(3n + 2) .creation-card-flower::after {
+    content: " ✦";
+
+    color: #a1844e;
+
+    font-size: 0.75rem;
+}
+
+.creation-card:nth-child(3n) .creation-card-flower::after {
+    content: " ·";
+
+    color: #a1844e;
+
+    font-size: 1rem;
 }

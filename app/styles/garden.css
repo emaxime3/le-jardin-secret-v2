@@ -1,0 +1,705 @@
+/* ==========================================
+   LE JARDIN SECRET
+========================================== */
+
+.garden {
+
+    min-height: 100vh;
+
+    padding: 100px 50px 90px;
+
+    color: #eee7d8;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(188, 153, 91, 0.12),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #101c18 0%,
+            #16251f 45%,
+            #0d1714 100%
+        );
+}
+
+
+/* ==========================================
+   EN-TÊTE
+========================================== */
+
+.garden-header {
+
+    max-width: 760px;
+
+    margin: 0 auto 75px;
+
+    text-align: center;
+}
+
+
+.garden-header h1 {
+
+    margin: 0;
+
+    color: #eee7d8;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3.5rem, 7vw, 5.2rem);
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+.garden-header h1::after {
+
+    content: "❦";
+
+    display: block;
+
+    margin-top: 18px;
+
+    color: #d9b66d;
+
+    font-size: 1.3rem;
+}
+
+
+.garden-header p {
+
+    max-width: 650px;
+
+    margin: 22px auto 0;
+
+    color: #b9b7aa;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.25rem;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   GRANDE INTRODUCTION
+========================================== */
+
+.featured-place {
+
+    width: min(1200px, 94vw);
+
+    margin: 0 auto 80px;
+}
+
+
+.featured-card {
+
+    position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
+    min-height: 520px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    color: white;
+
+    border:
+        1px solid rgba(217, 182, 109, 0.16);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.35);
+}
+
+
+.featured-card img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.featured-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 520px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 65px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(10, 19, 15, 0.82),
+            rgba(10, 19, 15, 0.18) 65%,
+            transparent
+        );
+}
+
+
+.place-type {
+
+    margin-bottom: 10px;
+
+    color: #e1c98e;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    font-style: italic;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+.featured-content h2 {
+
+    margin-bottom: 17px;
+
+    color: #f3ecdf;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3rem, 6vw, 4.5rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+
+.place-description {
+
+    max-width: 540px;
+
+    margin-bottom: 25px;
+
+    color: #eee8dc;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.18rem;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================
+   LIGNE DÉCORATIVE
+========================================== */
+
+.featured-content .line {
+
+    width: 80px;
+
+    height: 1px;
+
+    margin-top: 5px;
+
+    background: rgba(225, 201, 142, 0.75);
+}
+
+
+/* ==========================================
+   TITRE DES AUTRES LIEUX
+========================================== */
+
+.chapter-title {
+
+    margin: 100px 0 45px;
+
+    text-align: center;
+}
+
+
+.chapter-title span {
+
+    position: relative;
+
+    color: #aeb9a1;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 0.95rem;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+.chapter-title span::before,
+.chapter-title span::after {
+
+    content: "✦";
+
+    margin: 0 15px;
+
+    color: #d9b66d;
+
+    font-size: 0.65rem;
+}
+
+
+/* ==========================================
+   GRILLE DES LIEUX
+========================================== */
+
+.places-grid {
+
+    width: min(1200px, 94vw);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 32px;
+
+    align-items: stretch;
+}
+
+
+/* ==========================================
+   CARTES — MÊME FORMAT
+========================================== */
+
+.place-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    height: 100%;
+
+    min-height: 430px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(242, 234, 219, 0.96),
+            rgba(224, 219, 201, 0.92)
+        );
+
+    border:
+        1px solid rgba(217, 182, 109, 0.10);
+
+    border-radius: 18px;
+
+    color: #493f32;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 14px 38px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+
+.place-card:hover {
+
+    transform:
+        translateY(-7px)
+        rotate(-0.3deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(247, 240, 227, 0.98),
+            rgba(231, 225, 208, 0.95)
+        );
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.30);
+}
+
+
+/* ==========================================
+   IMAGES — MÊME HAUTEUR
+========================================== */
+
+.place-card img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 275px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+.place-card:hover img {
+
+    transform: scale(1.025);
+
+    filter: saturate(0.96);
+}
+
+
+/* ==========================================
+   ZONE DE LA FLEUR
+========================================== */
+
+.place-card > div:first-of-type {
+
+    flex-shrink: 0;
+
+    height: 275px;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 64px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(217, 182, 109, 0.10)
+        );
+}
+
+
+/* ==========================================
+   TEXTE DES CARTES
+========================================== */
+
+.card-text {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 24px 28px 27px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(232, 226, 211, 0.72),
+            rgba(238, 232, 218, 0.92)
+        );
+}
+
+
+.card-text p {
+
+    margin-bottom: 7px;
+
+    color: #78866f;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+
+.card-text h3 {
+
+    margin: 0;
+
+    color: #3f5542;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2rem;
+
+    font-weight: 500;
+
+    line-height: 1.1;
+}
+
+
+.mini-link {
+
+    display: inline-block;
+
+    margin-top: auto;
+
+    padding-top: 14px;
+
+    color: #927849;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.place-card:hover .mini-link {
+
+    transform: translateX(5px);
+
+    color: #536c54;
+}
+
+
+/* ==========================================
+   PETIT ORNEMENT
+========================================== */
+
+.place-card::after {
+
+    content: "❦";
+
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 18px;
+
+    color: #87937a;
+
+    font-size: 1.15rem;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   CITATION FINALE
+========================================== */
+
+.garden-quote {
+
+    width: min(700px, 90vw);
+
+    margin: 110px auto 40px;
+
+    text-align: center;
+}
+
+
+.garden-quote::before {
+
+    content: "❦";
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #d9b66d;
+
+    font-size: 1.3rem;
+}
+
+
+.garden-quote p {
+
+    margin: 0;
+
+    color: #aaa99d;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.25rem;
+
+    font-style: italic;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   TÉLÉPHONE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .garden {
+
+        padding: 55px 15px 70px;
+    }
+
+
+    .garden-header {
+
+        margin-bottom: 50px;
+    }
+
+
+    .garden-header h1 {
+
+        font-size: 3.5rem;
+    }
+
+
+    .garden-header p {
+
+        font-size: 1.08rem;
+    }
+
+
+    /* Grande introduction */
+
+    .featured-place {
+
+        width: 100%;
+
+        margin-bottom: 55px;
+    }
+
+
+    .featured-card {
+
+        min-height: 470px;
+
+        border-radius: 18px;
+    }
+
+
+    .featured-content {
+
+        min-height: 470px;
+
+        padding: 35px 28px;
+    }
+
+
+    .featured-content h2 {
+
+        font-size: 3.2rem;
+    }
+
+
+    .place-description {
+
+        font-size: 1.05rem;
+    }
+
+
+    /* Titre */
+
+    .chapter-title {
+
+        margin: 70px 0 35px;
+    }
+
+
+    .chapter-title span {
+
+        font-size: 0.8rem;
+
+        letter-spacing: 0.12em;
+    }
+
+
+    .chapter-title span::before,
+    .chapter-title span::after {
+
+        margin: 0 7px;
+    }
+
+
+    /* Cartes */
+
+    .places-grid {
+
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .place-card img {
+
+        height: 240px;
+    }
+
+
+    .place-card > div:first-of-type {
+
+        height: 240px;
+    }
+
+
+    .card-text {
+
+        padding: 22px 23px 25px;
+    }
+
+
+    .card-text h3 {
+
+        font-size: 1.85rem;
+    }
+
+
+    /* Citation */
+
+    .garden-quote {
+
+        margin-top: 75px;
+    }
+
+
+    .garden-quote p {
+
+        font-size: 1.1rem;
+    }
+
+}
