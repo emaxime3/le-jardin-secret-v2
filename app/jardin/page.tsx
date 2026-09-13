@@ -1,4 +1,6 @@
+
 import Link from "next/link";
+import NotificationButton from "../components/NotificationButton";
 
 export default function Jardin() {
   return (
@@ -9,6 +11,12 @@ export default function Jardin() {
       ========================================== */}
 
       <header className="garden-header">
+
+        {/* ==========================================
+            NOTIFICATIONS
+        ========================================== */}
+
+        <NotificationButton />
 
         <p
           style={{
@@ -380,3 +388,4 @@ export default function Jardin() {
     </main>
   );
 }
+
