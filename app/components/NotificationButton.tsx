@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { supabase } from "../../lib/supabase";
 
-function urlBase64ToUint8Array(base64String: string) {
+function urlBase64ToArrayBuffer(base64String: string): ArrayBuffer {
   const padding = "=".repeat(
     (4 - (base64String.length % 4)) % 4
   );
@@ -14,9 +14,26 @@ function urlBase64ToUint8Array(base64String: string) {
 
   const rawData = window.atob(base64);
 
-  return Uint8Array.from(
-    [...rawData].map((char) => char.charCodeAt(0))
-  );
+  const bytes = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; i++) {
+    bytes[i] = rawData.charCodeAt(i);
+  }
+
+  // Une clé publique VAPID P-256 doit faire 65 octets
+  // et commencer par 0x04.
+  if (bytes.length !== 65 || bytes[0] !== 0x04) {
+    throw new Error(
+      `La clé VAPID n'est pas une clé P-256 valide (${bytes.length} octets).`
+    );
+  }
+
+  // On crée un ArrayBuffer propre pour Safari / WebKit.
+  const buffer = new ArrayBuffer(bytes.length);
+
+  new Uint8Array(buffer).set(bytes);
+
+  return buffer;
 }
 
 export default function NotificationButton() {
@@ -103,7 +120,7 @@ export default function NotificationButton() {
       // ==========================================
 
       const applicationServerKey =
-        urlBase64ToUint8Array(vapidPublicKey);
+        urlBase64ToArrayBuffer(vapidPublicKey);
 
       // ==========================================
       // CRÉATION DE L'ABONNEMENT PUSH
@@ -136,13 +153,13 @@ export default function NotificationButton() {
       // ENREGISTREMENT DANS SUPABASE
       // ==========================================
 
-   const { error } = await supabase
-  .from("push_subscriptions")
-  .insert({
-    endpoint: json.endpoint,
-    p256dh: json.keys.p256dh,
-    auth: json.keys.auth,
-  });
+      const { error } = await supabase
+        .from("push_subscriptions")
+        .insert({
+          endpoint: json.endpoint,
+          p256dh: json.keys.p256dh,
+          auth: json.keys.auth,
+        });
 
       // ==========================================
       // ERREUR SUPABASE
