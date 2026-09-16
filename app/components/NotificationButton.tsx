@@ -136,18 +136,13 @@ export default function NotificationButton() {
       // ENREGISTREMENT DANS SUPABASE
       // ==========================================
 
-     const { error } = await supabase
+   const { error } = await supabase
   .from("push_subscriptions")
-  .upsert(
-    {
-      endpoint: json.endpoint,
-      p256dh: json.keys.p256dh,
-      auth: json.keys.auth,
-    },
-    {
-      onConflict: "endpoint",
-    }
-  );
+  .insert({
+    endpoint: json.endpoint,
+    p256dh: json.keys.p256dh,
+    auth: json.keys.auth,
+  });
 
       // ==========================================
       // ERREUR SUPABASE
